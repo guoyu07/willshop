@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -64,9 +65,19 @@ use Laratrust\Traits\LaratrustUserTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereTagidList($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUnionid($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Permission[] $permissions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Role[] $roles
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\User onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePermissionIs($permission = '')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRoleIs($role = '')
+ * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
  */
 class User extends Authenticatable
 {
+    use SoftDeletes;
     use LaratrustUserTrait;
     use HasApiTokens, Notifiable;
 
@@ -158,4 +169,16 @@ class User extends Authenticatable
         'password' => '密码',
         'api_token' => 'apitoken',
     ];
+
+    /**
+     * 根据用户名查找用户，用于 passport 登录验证逻辑
+     *
+     * @param $username
+     *
+     * @return \Illuminate\Database\Eloquent\Model|null|static
+     */
+    public function findForPassport($username)
+    {
+        return $this->where('name', $username)->first();
+    }
 }

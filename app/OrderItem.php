@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\OrderItem
@@ -26,9 +27,16 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereProductId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereUnitPrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereUpdatedAt($value)
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\OrderItem onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Query\Builder|\App\OrderItem withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\OrderItem withoutTrashed()
  */
 class OrderItem extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'user_id',
         'product_id',

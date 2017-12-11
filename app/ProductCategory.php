@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\ProductCategory
@@ -24,9 +25,16 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ProductCategory whereParentId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ProductCategory whereThumbnail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ProductCategory whereUpdatedAt($value)
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\ProductCategory onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Query\Builder|\App\ProductCategory withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\ProductCategory withoutTrashed()
  */
 class ProductCategory extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'name',
         'parent_id',

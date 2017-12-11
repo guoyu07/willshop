@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\ProductComment
@@ -22,8 +23,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ProductComment whereRate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ProductComment whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ProductComment whereUserId($value)
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\ProductComment onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Query\Builder|\App\ProductComment withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\ProductComment withoutTrashed()
  */
 class ProductComment extends Model
 {
-    //
+    use SoftDeletes;
 }

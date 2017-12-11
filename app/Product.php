@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Product
@@ -33,9 +34,16 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Product whereStock($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Product whereThumbnail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Product whereUpdatedAt($value)
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\Product onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Query\Builder|\App\Product withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Product withoutTrashed()
  */
 class Product extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'product_id',
         'category_id',

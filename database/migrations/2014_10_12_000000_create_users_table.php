@@ -35,6 +35,7 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('groupid')->default(0)->comment('粉丝组groupid');
             $table->string('tagid_list', 50)->default('')->comment('微信用户标签ID列表');
             $table->timestamp('last_online_at')->nullable()->comment('最后一次在线时间');
+            $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });

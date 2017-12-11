@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Favourite
@@ -18,9 +19,16 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Favourite whereProductId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Favourite whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Favourite whereUserId($value)
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\Favourite onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Query\Builder|\App\Favourite withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Favourite withoutTrashed()
  */
 class Favourite extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'user_id',
         'product_id',
