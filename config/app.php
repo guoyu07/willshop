@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'willshop',
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -239,9 +239,4 @@ return [
         'EasyWeChat' => Overtrue\LaravelWeChat\Facade::class,  // laravel-wechat
     ],
 
-    // other configs.
-    'password_oauth_client' => [
-        'id' => env('PASSWORD_OAUTH_CLIENT_ID', null),
-        'secret' => env('PASSWORD_OAUTH_CLIENT_SECRET', ''),
-    ]
 ];
