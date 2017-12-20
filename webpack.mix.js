@@ -59,12 +59,12 @@ mix.webpackConfig(webpack => {
 
 mix.js('resources/assets/js/shop/index.js', 'js/shop.js')
   .js('resources/assets/js/admin/index.js', 'js/admin.js')
-  .extract(['vue', 'vuex', 'vue-router', 'axios', 'vue-axios'], 'vendor.js')
+  .extract(['vue', 'vuex', 'vue-router', 'axios', 'vue-axios'], 'js/vendor.js')
   .sass('resources/assets/sass/shop.scss', 'css/shop.css')
   .sass('resources/assets/sass/admin.scss', 'css/admin.css');
 
 mix.browserSync({
-  proxy: 'willshop.test/shop',
+  proxy: 'willshop.test/admin',
   files: [
     'app/**/*.php',
     'resources/views/**/*.php',

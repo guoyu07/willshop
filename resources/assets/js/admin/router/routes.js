@@ -1,7 +1,7 @@
 const routes = [
   {
     path: '/',
-    component: () => import('../pages/dashboard.vue'),
+    component: () => import(/* webpackChunkName: 'admin-dashboard' */ '../pages/dashboard.vue'),
     meta: {
       requiresAuth: false,
       title: '首页',
@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: '/order/list',
-    component: () => import('../pages/order/lsit.vue'),
+    component: () => import(/* webpackChunkName: 'admin-order-list' */ '../pages/order/lsit.vue'),
     meta: {
       requiresAuth: true,
       title: '',
@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: '/product/list',
-    component: () => import('../pages/product/lsit.vue'),
+    component: () => import(/* webpackChunkName: 'admin-product-list' */ '../pages/product/lsit.vue'),
     meta: {
       requiresAuth: true,
       title: '',
@@ -31,7 +31,7 @@ const routes = [
   },
   {
     path: '/product/edit/:id',
-    component: () => import('../pages/product/product_form.vue'),
+    component: () => import(/* webpackChunkName: 'admin-product-form' */ '../pages/product/product_form.vue'),
     meta: {
       requiresAuth: true,
       title: '',
@@ -41,7 +41,7 @@ const routes = [
   },
   {
     path: '/user/list',
-    component: () => import('../pages/user/lsit.vue'),
+    component: () => import(/* webpackChunkName: 'admin-user-list' */ '../pages/user/lsit.vue'),
     meta: {
       requiresAuth: true,
       title: '',
@@ -51,7 +51,7 @@ const routes = [
   },
   {
     path: '/login',
-    component: () => import('../pages/auth/login.vue'),
+    component: () => import(/* webpackChunkName: 'admin-auth-login' */ '../pages/auth/login.vue'),
     meta: {
       requiresAuth: false,
       title: '',
@@ -61,7 +61,7 @@ const routes = [
   },
   {
     path: '*',
-    component: () => import('../pages/404.vue'),
+    component: () => import(/* webpackChunkName: 'admin-error404' */ '../pages/404.vue'),
     meta: {
       title: '404',
       topmenuVisible: true,

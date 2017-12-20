@@ -22,8 +22,8 @@
     <mainmenu></mainmenu>
   </div>
 
-  <script src="{{ asset('build/vendor.js') }}"></script>
-  <script src="{{ asset('build/mix.js') }}"></script>
-  <script src="{{ asset('build/shop.js') }}"></script>
+  <script src="{{ mix('js/manifest.js') }}"></script>
+  <script src="{{ mix('js/vendor.js') }}"></script>
+  <script src="{{ mix('js/shop.js') }}"></script>
   </body>
 </html>

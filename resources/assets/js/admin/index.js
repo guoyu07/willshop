@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import ElementUI, { Loading } from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
+import 'element-ui/lib/theme-chalk/index.css'
 import '../../sass/admin.scss'
 import { mapGetters, mapState } from 'vuex'
 import axios from 'axios'

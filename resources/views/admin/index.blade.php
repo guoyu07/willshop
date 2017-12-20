@@ -31,8 +31,8 @@
   </transition>
 </div>
 
-<script src="{{ asset('build/vendor.js') }}"></script>
-<script src="{{ asset('build/mix.js') }}"></script>
-<script src="{{ asset('build/admin.js') }}"></script>
+<script src="{{ mix('js/manifest.js') }}"></script>
+<script src="{{ mix('js/vendor.js') }}"></script>
+<script src="{{ mix('js/admin.js') }}"></script>
 </body>
 </html>
