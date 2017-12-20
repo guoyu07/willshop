@@ -10,7 +10,7 @@
   ],
   "plugins": [
     "transform-runtime",
-    ["component", [
+    ["import", [
       {
         "libraryName": "we-vue",
         "style": false

@@ -3,7 +3,8 @@
     <div class="table-tools">
       <el-form :inline="true" :model="searchForm" class="demo-form-inline">
         <el-form-item>
-          <el-input v-model="searchForm.keyword" placeholder="按昵称搜索" @keyup.enter.native="loadData"></el-input>
+          <el-input v-model="searchForm.keyword" placeholder="按昵称搜索"
+                    @keyup.enter.native="loadData"></el-input>
         </el-form-item>
         <el-form-item>
           <el-select v-model="searchForm.sex" placeholder="性别筛选" @change="loadData">
@@ -30,7 +31,9 @@
       <el-table-column prop="updated_at" label="更新时间"></el-table-column>
       <el-table-column label="操作" inline-template>
         <div>
-          <router-link :to="'/product/edit/' + row.id" class="el-button el-button--primary el-button--small">编辑</router-link>
+          <router-link :to="'/product/edit/' + row.id" class="el-button el-button--primary el-button--small">
+            编辑
+          </router-link>
           <el-button size="small" type="danger" @click="deleteProduct(row.id)">删除</el-button>
         </div>
       </el-table-column>
@@ -38,11 +41,11 @@
 
     <div class="paginator">
       <el-pagination
-              @current-change="handleCurrentChange"
-              :current-page="products.current_page"
-              :page-size="products.per_page"
-              layout="total, prev, pager, next, jumper"
-              :total="products.tatal">
+          @current-change="handleCurrentChange"
+          :current-page="products.current_page"
+          :page-size="products.per_page"
+          layout="total, prev, pager, next, jumper"
+          :total="products.tatal">
       </el-pagination>
     </div>
   </div>
@@ -65,7 +68,7 @@
     },
 
     mounted () {
-      this.loadData();
+      this.loadData()
     },
 
     methods: {
@@ -77,8 +80,8 @@
             page: page
           }
         }).then((response) => {
-          this.products = response.data.products;
-        });
+          this.products = response.data.products
+        })
       },
 
       deleteProduct (id) {

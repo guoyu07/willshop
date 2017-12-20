@@ -26,18 +26,20 @@
 <script>
   import { Swipe, SwipeItem } from 'we-vue'
 
-  const banners = [{
-    url: 'javascript:',
-    img: 'https://cdn.pixabay.com/photo/2015/03/18/09/31/prairie-679014__340.jpg'
-  },
-  {
-    url: 'javascript:',
-    img: 'https://cdn.pixabay.com/photo/2015/03/18/09/29/the-scenery-679011__340.jpg'
-  },
-  {
-    url: 'javascript',
-    img: 'https://cdn.pixabay.com/photo/2015/03/28/16/40/lake-696098__340.jpg'
-  }]
+  const banners = [
+    {
+      url: 'javascript:',
+      img: 'https://cdn.pixabay.com/photo/2015/03/18/09/31/prairie-679014__340.jpg'
+    },
+    {
+      url: 'javascript:',
+      img: 'https://cdn.pixabay.com/photo/2015/03/18/09/29/the-scenery-679011__340.jpg'
+    },
+    {
+      url: 'javascript',
+      img: 'https://cdn.pixabay.com/photo/2015/03/28/16/40/lake-696098__340.jpg'
+    }
+  ]
 
   export default {
     components: {
@@ -45,19 +47,19 @@
       [SwipeItem.name]: SwipeItem
     },
 
-    data() {
+    data () {
       return {
         products: [],
         banners
       }
     },
 
-    mounted() {
+    mounted () {
       this.getProducts()
     },
 
     methods: {
-      getProducts() {
+      getProducts () {
         this.axios.get('product').then((response) => {
           this.products = response.data.products
         })
@@ -87,7 +89,7 @@
       overflow: hidden;
       width: 100%;
     }
-    
+
     .link {
       z-index: 10;
       position: absolute;

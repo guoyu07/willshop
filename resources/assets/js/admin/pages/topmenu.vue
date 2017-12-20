@@ -18,8 +18,8 @@
 </template>
 
 <script>
-  import userConfig from '../config';
-  import { mapGetters } from 'vuex';
+  import userConfig from '../config'
+  import { mapGetters } from 'vuex'
 
   export default {
     computed: {
@@ -30,9 +30,9 @@
 
     methods: {
       logout () {
-        window.localStorage.removeItem(userConfig.authTokenKey);
+        window.localStorage.removeItem(userConfig.authTokenKey)
 
-        this.$router.replace('/login');
+        this.$router.replace('/login')
       }
     }
   }

@@ -3,7 +3,8 @@
     <div class="login-form">
       <h1 class="title">WILLSHOP</h1>
       <el-input type="text" placeholder="请输入用户名" v-model="loginForm.name" @keyup.native.enter="login"></el-input>
-      <el-input type="password" placeholder="请输入登录密码" v-model="loginForm.password" @keyup.native.enter="login"></el-input>
+      <el-input type="password" placeholder="请输入登录密码" v-model="loginForm.password"
+                @keyup.native.enter="login"></el-input>
       <el-button class="btn-submit" type="primary" @click.native="login" :disabled="false">登录</el-button>
 
       <div class="icon-wechat-login" @click="scanLogin"><i class="iconfont icon-wechat-circle"></i></div>
@@ -16,18 +17,8 @@
 </template>
 
 <script>
-  import config from '../../config';
-  import {mapActions} from 'vuex';
-
-  echo.channel('qrcodeLoginChannel').listen('WechatLogin', (e) => {
-    console.log(e)
-//    this.$message({
-//      message: '登录成功',
-//      type: 'success'
-//    })
-//
-//    this.$router.push('/')
-  })
+  import config from '../../config'
+  import { mapActions } from 'vuex'
 
   export default {
     data () {
@@ -42,16 +33,6 @@
     },
 
     mounted () {
-      if (typeof io !== 'undefined') {
-        echo.channel('qrcodeLoginChannel').listen('WechatLogin', (e) => {
-          this.$message({
-            message: '登录成功',
-            type: 'success'
-          })
-
-          this.$router.push('/')
-        })
-      }
     },
 
     methods: {
@@ -63,16 +44,14 @@
         this.axios.post('login', this.loginForm).then((response) => {
           console.log(response)
 
-          localStorage.setItem(config.authTokenKey, response.data.access_token);
+          localStorage.setItem(config.authTokenKey, response.data.access_token)
 
-//          this.storeUserToLocal(response.data.user);
-
-          this.$router.push('/');
+          this.$router.push('/')
         }).catch((error) => {
           this.$message({
             message: error.response.data,
             type: 'error'
-          });
+          })
         })
       },
 
@@ -135,7 +114,7 @@
       }
     }
   }
-  
+
   .icon-wechat-login {
     display: block;
     overflow: hidden;
