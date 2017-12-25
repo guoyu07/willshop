@@ -63,13 +63,13 @@ mix.js('resources/assets/js/shop/index.js', 'js/shop.js')
   .sass('resources/assets/sass/shop.scss', 'css/shop.css')
   .sass('resources/assets/sass/admin.scss', 'css/admin.css');
 
-mix.browserSync({
-  proxy: 'willshop.test/admin',
-  files: [
-    'app/**/*.php',
-    'resources/views/**/*.php',
-    'public/js/**/*.js',
-    'public/css/**/*.css',
-    'public/build/**/*.js',
-  ]
-});
+// mix.browserSync({
+//   proxy: 'willshop.test/admin',
+//   files: [
+//     'app/**/*.php',
+//     'resources/views/**/*.php',
+//     'public/js/**/*.js',
+//     'public/css/**/*.css',
+//     'public/build/**/*.js',
+//   ]
+// });

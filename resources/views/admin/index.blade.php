@@ -14,8 +14,9 @@
   <!-- No Baidu Siteapp-->
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-  {{--<script src="//willshop.app:6001/socket.io/socket.io.js"></script>--}}
-  <script src="https://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>
+  {{--<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>--}}
+  <script src="http://willshop.test:6001/socket.io/socket.io.js"></script>
+  {{--<script src="https://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>--}}
   <script>
     window.Laravel = {
       csrfToken: '{!! csrf_token() !!}'

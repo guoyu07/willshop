@@ -86,10 +86,27 @@ axios.interceptors.response.use((response) => {
 })
 
 if (typeof io !== 'undefined') {
-  window.echo = new Echo({
+  const echo = new Echo({
     broadcaster: 'socket.io',
-    host: 'willshop.app:6001'
+    host: 'http://willshop.test:6001'
   })
+
+  echo.join('chatroom')
+    .here((users) => {
+      // this.usersInRoom = users
+    })
+    .joining((user) => {
+      // this.usersInRoom.push(user)
+    })
+    .leaving((user) => {
+      // this.usersInRoom = this.usersInRoom.filter(u => u != user)
+    })
+    .listen('MessagePosted', (e) => {
+      // this.messages.push({
+      //   message: e.message.message,
+      //   user: e.user
+      // })
+    })
 }
 
 const app = new Vue({
