@@ -42,6 +42,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\Order withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Order withoutTrashed()
+ * @property string $postcode 邮编
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Order wherePostcode($value)
  */
 class Order extends Model
 {

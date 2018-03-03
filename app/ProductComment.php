@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\ProductComment withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\ProductComment withoutTrashed()
+ * @property string|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\ProductComment whereDeletedAt($value)
  */
 class ProductComment extends Model
 {

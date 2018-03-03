@@ -30,6 +30,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\ProductCategory withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\ProductCategory withoutTrashed()
+ * @property string|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\ProductCategory whereDeletedAt($value)
  */
 class ProductCategory extends Model
 {

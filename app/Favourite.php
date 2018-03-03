@@ -24,6 +24,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\Favourite withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Favourite withoutTrashed()
+ * @property string|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Favourite whereDeletedAt($value)
  */
 class Favourite extends Model
 {

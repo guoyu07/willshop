@@ -74,6 +74,8 @@ use Laratrust\Traits\LaratrustUserTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRoleIs($role = '')
  * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
+ * @property string|null $remember_token
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
  */
 class User extends Authenticatable
 {
