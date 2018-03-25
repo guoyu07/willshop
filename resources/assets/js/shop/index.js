@@ -9,7 +9,7 @@ import appConfig from './config' // 配置
 import { mapState } from 'vuex'
 import '../../iconfont/iconfont.css'
 import router from './router'
-import { Dialog, Indicator, Toast } from 'we-vue'
+import { Dialog, Toast } from 'we-vue'
 
 Vue.config.productionTip = false
 
@@ -137,14 +137,14 @@ const app = new Vue({
      * @param msg
      */
     showLoading (msg = 'Loading') {
-      Indicator.open(msg)
+      // Indicator.open(msg)
     },
 
     /**
      * 隐藏 loading 提示
      */
     hideLoading () {
-      Indicator.close()
+      // Indicator.close()
     }
   }
 })
